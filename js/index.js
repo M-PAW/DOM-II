@@ -12,6 +12,11 @@ const navLink = document.querySelectorAll('.nav-link').forEach(el => {
         el.style.color = 'red';
         el.style.transform = 'scale(1)';
     })  
+
+    // el.addEventListener("mouse", (e){
+    //     e.preventDefault()
+    //   });
+
 })
 
 // 3-4. click / dblclick
@@ -63,6 +68,13 @@ crazyBus.addEventListener('mouseup', e =>
 const uglyBlue = document.querySelector('body');
 uglyBlue.addEventListener('contextmenu', () => {
   uglyBlue.style.backgroundColor = 'blue';
+
+})
+//Stop Propagation
+const header = document.querySelector('header');
+header.addEventListener('contextmenu', () => {
+    header.style.backgroundColor = 'red';
+    event.stopPropagation();
 })
 
 const picsPoP = document.querySelectorAll('img').forEach(el => {
@@ -81,3 +93,13 @@ window.addEventListener('scroll', () => {
     redact.style.backgroundColor = 'black';
 });
 
+
+const links = document.querySelectorAll('a').forEach(e => 
+    e.addEventListener('click', e => 
+    e.preventDefault()
+    ))
+
+// preventDefault
+// const firstLink = document.querySelector("a").addEventListener("click", (e){
+//     e.preventDefault()
+//   });
