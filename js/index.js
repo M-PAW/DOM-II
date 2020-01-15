@@ -64,8 +64,8 @@ crazyBus.addEventListener('mouseup', e =>
 //   })
 // })
 
-// 8-10. contextmenu, resize, scroll
-const uglyBlue = document.querySelector('body');
+// 8. contextmenu
+const uglyBlue = document.querySelector('header');
 uglyBlue.addEventListener('contextmenu', () => {
   uglyBlue.style.backgroundColor = 'blue';
 
@@ -73,10 +73,17 @@ uglyBlue.addEventListener('contextmenu', () => {
 //Stop Propagation
 const header = document.querySelector('header');
 header.addEventListener('contextmenu', () => {
-    header.style.backgroundColor = 'red';
+ //   header.style.backgroundColor = 'red';
     event.stopPropagation();
 })
 
+const uglyBody = document.querySelector('body');
+uglyBody.addEventListener('contextmenu', () => {
+  uglyBody.style.backgroundColor = 'pink';
+
+})
+
+// 9. resize
 const picsPoP = document.querySelectorAll('img').forEach(el => {
     el.addEventListener('resize', () => {
         el.style.transform = 'scale(1.2)';
@@ -88,6 +95,7 @@ window.addEventListener('resize', () => {
     resizeClown.src = 'img/evil_clown.png';
 });
 
+// 10. scroll
 const redact = document.querySelector('p');
 window.addEventListener('scroll', () => {
     redact.style.backgroundColor = 'black';
